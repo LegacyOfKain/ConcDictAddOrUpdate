@@ -13,7 +13,9 @@ namespace ConcDictAddOrUpdate
         static ConcurrentDictionary<string, int> _mydictConcu = new ConcurrentDictionary<string, int>();
         static void Main(string[] args)
         {
-            string tempGuid = ""; int tempValue = 0; List<int> integerList = Enumerable.Range(0, 10).ToList();
+            string tempGuid = "";
+            int tempValue = 0;
+            List<int> integerList = Enumerable.Range(0, 10).ToList();
             Parallel.ForEach(integerList, i =>
             {
                 tempGuid = Guid.NewGuid().ToString();
